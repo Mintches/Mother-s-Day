@@ -7,9 +7,7 @@
     <title>Happy Mother's Day!</title>
     <style>
         body {
-            font-family: 'Brush Script MT';
             margin: 0;
-            padding: 0;
             background: #bfb7e8;
             color: #333;
             display: flex;
@@ -28,6 +26,7 @@
         }
 
         h1 {
+            font-family: 'Brush Script MT';
             color: #8876e3;
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -45,12 +44,6 @@
             margin: 1.5rem 0;
         }
 
-        footer {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #888;
-        }
-
         @keyframes fall {
             0% {
                 transform: translateY(-100px) rotate(0deg);
@@ -59,7 +52,7 @@
 
             100% {
                 transform: translateY(100vh) rotate(360deg);
-                opacity: 0.1;
+                opacity: 0;
             }
         }
 
@@ -68,8 +61,6 @@
             top: -40px;
             font-size: 24px;
             animation: fall linear forwards;
-            pointer-events: none;
-            z-index: 9999;
         }
     </style>
 </head>
@@ -95,7 +86,7 @@
     </div>
     <script>
         // falling flowers script
-        const flowers = ["🌸"]; // array of flowers to choose from, add more as desired
+        const flowers = ["🌸"]; // can extend to add more types of flowers
 
         function createFlower() {
             const flower = document.createElement("div");
