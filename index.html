@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Mother's Day!</title>
+    <style>
+        body {
+            font-family: 'Brush Script MT';
+            margin: 0;
+            padding: 0;
+            background: #bfb7e8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: #e3defa;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #8876e3;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-family: 'Courier New', Courier;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.1;
+            }
+        }
+
+        .flower {
+            position: fixed;
+            top: -40px;
+            font-size: 24px;
+            animation: fall linear forwards;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Happy Mother's Day!</h1>
+        <img src="https://i.makeagif.com/media/5-15-2017/yFhiM9.gif" alt="Flowers for Mom" />
+        <p>
+            Dear Mom,<br />
+            Thank you for your endless love, support, and care. You are the heart of our family and a true inspiration.
+            Today is your day, and we celebrate everything you are. 💖
+        </p>
+        <p>
+            Wishing you a day filled with love, joy, and relaxation. You deserve the world.
+        </p>
+        <p>
+            With love,
+        </p>
+        <p>
+            - Mincy 💐
+        </p>
+    </div>
+    <script>
+        const flowers = ["🌸", "🌸"]; // I like 
+
+        function createFlower() {
+            const flower = document.createElement("div");
+
+            flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+            flower.className = "flower";
+            flower.style.left = Math.random() * window.innerWidth + "px";
+            flower.style.animationDuration = 5 + Math.random() * 5 + "s";
+            flower.style.fontSize = 20 + Math.random() * 20 + "px";
+            document.body.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 10000);
+        }
+
+        setInterval(createFlower, 200);
+    </script>
+</body>
+
+</html>
